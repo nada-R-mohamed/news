@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->boolean('comment_able')->default('1');
             $table->boolean('status')->default('1');
-            $table->bigInteger('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->bigInteger(column: 'user_id');
+            $table->unsignedBigInteger(column: 'user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
 

@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             
             $table->text('comment');
-            $table->bigInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->bigInteger('post_id');
+            $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->boolean('status')->default('1');
             $table->string('ip_address');
